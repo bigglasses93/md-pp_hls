@@ -10,4 +10,11 @@ By GUI: Create a project in HLS, include the source files for synthesis:
   testbench (simulation): test_md-pp.cpp
   
 By Tcl command line: 
-  vivado_hls -f run_hls.tcl
+  In file run_hls.tcl:
+    Choose a target device and edit line "set_part {"device name"} 
+    comment/uncomment to run a specific task in HLS
+      csim_design -- C simulation
+      csynth_design -- C synthesis
+      cosim_design -- C/RTL cosimulation
+      export_design -- export IP that can be used in Vivado
+  After confirming tcl file, run: vivado_hls -f run_hls.tcl
